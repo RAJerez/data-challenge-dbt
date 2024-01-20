@@ -12,7 +12,7 @@ profile: 'data_challenge_dbt'
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
-model-paths: ["models"]
+model-paths: ["data_challenge_dbt/models"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
 seed-paths: ["seeds"]
@@ -30,8 +30,19 @@ clean-targets:         # directories to be removed by `dbt clean`
 # In this example config, we tell dbt to build all models in the example/
 # directory as views. These settings can be overridden in the individual model
 # files using the `{{ config(...) }}` macro.
+
 models:
   data_challenge_dbt:
-    # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
+    challenge:
+      bibliotecas:
+        +materialized: table
+      cines:
+        +materialized: table
+      museos:
+        +materialized: table
+      cines_insights:
+        +materialized: table
+      size_by_categoty_province:
+        +materialized: table
+      size_by_category:
+        +materialized: table

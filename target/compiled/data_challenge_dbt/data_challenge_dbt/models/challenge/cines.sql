@@ -1,6 +1,6 @@
 -- Antes hay que crear las siguientes columnas: telefono y mail
 
-{{ config(materialized='table') }}
+
 
 select
     "cod_localidad" as cod_localidad,

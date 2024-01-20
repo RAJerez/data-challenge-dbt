@@ -1,4 +1,4 @@
-{{config(materialized='table')}}
+
 
 WITH categorias AS (
     SELECT categoria FROM cines

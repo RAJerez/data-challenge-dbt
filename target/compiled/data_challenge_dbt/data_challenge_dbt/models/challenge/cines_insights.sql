@@ -1,4 +1,4 @@
-{{config(materialized='table')}}
+
 
 SELECT 
 "provincia" AS provincia,

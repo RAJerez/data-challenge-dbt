@@ -1,14 +1,14 @@
-{{ config(materialized='table') }}
+
 
 WITH categorias AS (
     SELECT categoria, provincia
-    FROM {{ ref('cines') }}
+    FROM "data-challenge-dbt"."public"."cines"
     UNION ALL
     SELECT categoria, provincia
-    FROM {{ ref('museos') }}
+    FROM "data-challenge-dbt"."public"."museos"
     UNION ALL
     SELECT categoria, provincia
-    FROM {{ ref('bibliotecas') }}
+    FROM "data-challenge-dbt"."public"."bibliotecas"
 )
 
 SELECT

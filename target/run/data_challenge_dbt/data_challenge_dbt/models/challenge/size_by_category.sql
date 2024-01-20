@@ -1,4 +1,14 @@
-{{config(materialized='table')}}
+
+  
+    
+
+  create  table "data-challenge-dbt"."public"."size_by_category__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
 
 WITH categorias AS (
     SELECT categoria FROM cines
@@ -13,3 +23,5 @@ SELECT
     COUNT(*) AS cantidad
 FROM categorias
 GROUP BY categoria
+  );
+  

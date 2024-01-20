@@ -1,6 +1,16 @@
--- Antes hay que crear las siguientes columnas: telefono y mail
 
-{{ config(materialized='table') }}
+  
+    
+
+  create  table "data-challenge-dbt"."public"."cines__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- Antes hay que crear las siguientes columnas: telefono y mail
+
+
 
 select
     "cod_localidad" as cod_localidad,
@@ -16,3 +26,5 @@ select
     NULL as mail,
     "web" as web
 FROM raw_cine
+  );
+  

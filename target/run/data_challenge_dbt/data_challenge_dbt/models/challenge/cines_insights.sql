@@ -1,4 +1,14 @@
-{{config(materialized='table')}}
+
+  
+    
+
+  create  table "data-challenge-dbt"."public"."cines_insights__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
 
 SELECT 
 "provincia" AS provincia,
@@ -17,3 +27,5 @@ COLUMNAS raw_cine
 'sector', 'pantallas', 'butacas', 'tipo_de_gestion', 'espacio_incaa',
 'año_actualizacion'
 */
+  );
+  

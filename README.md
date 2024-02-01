@@ -41,43 +41,63 @@ proyecto deberá:
 Utilizé Poetry para un mejor manejo de dependecias y también para crear mi entorno virtual.
 
 Instalar poetry desde pipx y la instalación se realizara aislada del entorno global
-    
-    pipx install poetry
+```bash
+pipx install poetry
+```
 
 Para instalar las dependencias necesarias descriptas en pyproyect.toml
-
-    poetry install
+```bash
+poetry install
+```
 
 Automaticamente se creara un entorno virtual al cual puede acceder
-
-    poetry shell
-
+```bash
+poetry shell
+```
 
 #### Opción sin Poetry
 En caso de no usar poetry puede instalar las dependencias a traves de requirements.txt
 El proyecto se realizó con Python 3.10
-
-    python3 -m virtualenv venv
-
-    source venv/bin/activate
-
-    pip install -r 'requirements.txt'
-
+```bash
+python3 -m virtualenv venv
+source venv/bin/activate
+pip install -r 'requirements.txt'
+```
 
 ## Creación de base de datos, tablas y ejecución de pipeline
 Levanto contenedor con Base de datos Postgres:
-
-    sudo docker compose up -d
+```bash
+sudo docker compose up -d
+```
 
 Puede acceder a la base de datos desde bash:
-
-    docker exec -it postgres psql -U postgres -d data-challenge-dbt
+```bash
+docker exec -it postgres psql -U postgres -d data-challenge-dbt
+```
 
 Carga de datos crudos en base de datos
 El siguiente script realiza la conexión con la base de datos y realiza la carga.
-
-    python3 main.py
+```bash
+python3 main.py
+```
 
 Ejecutar modelos de dbt:
+```bash
+dbt run
+```
 
-    dbt run
+
+## Instalacion de Airflow
+
+
+```bash
+mkdir airflow
+cd airflow
+curl -LfO 'https://airflow.apache.org/docs/apache-airflow/<version>/docker-compose.yaml'
+mkdir -p ./dags ./logs ./plugins ./config
+chmod -R 777 ./dags ./logs ./plugins ./config
+echo -e "AIRFLOW_UID=$(id -u)" > .env
+chmod -R 755 .env
+docker compose up airflow-init
+docker compose up
+```

@@ -12,21 +12,12 @@ BIBLIOTECA_URL = config("BIBLIOTECA_URL")
 paths_dict = {
     "raw_museo": "csv-data/museos.csv",
     "raw_cine": "csv-data/cines.csv",
-    "raw_biblioteca": "csv-data/bibliotecas.csv"
+    "raw_biblioteca": "csv-data/bibliotecas.csv",
 }
 
 # dictionaries with data sources names and URLs
-museo_ds = {
-    "name" : "museo",
-    "url" : MUSEO_URL
-}
+museo_ds = {"name": "museo", "url": MUSEO_URL}
 
-cine_ds = {
-    "name" : "cine",
-    "url" : CINE_URL
-}
+cine_ds = {"name": "cine", "url": CINE_URL}
 
-biblioteca_ds = {
-    "name" : "biblioteca_popular",
-    "url" : BIBLIOTECA_URL
-}
+biblioteca_ds = {"name": "biblioteca_popular", "url": BIBLIOTECA_URL}

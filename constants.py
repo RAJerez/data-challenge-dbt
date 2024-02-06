@@ -1,8 +1,8 @@
 from pathlib import Path
 
-BASE_FILE_DIR = Path("/tmp") # file storage path
-ROOT_DIR = Path().resolve().parent # project root path
-SQL_DIR = ROOT_DIR / "data-challenge-dbt/sql" # path with sql files
+BASE_FILE_DIR = Path("/tmp")  # file storage path
+ROOT_DIR = Path().resolve().parent  # project root path
+SQL_DIR = ROOT_DIR / "data-challenge-dbt/sql"  # path with sql files
 SETTINGS_DIR = ROOT_DIR / "data-challenge-dbt"
 
 # Table names

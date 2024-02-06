@@ -1,5 +1,6 @@
 version: '3.8'
 
+# TODO: Try to keep just one docker compose file in the root path directory and not multiple docker compose files (see docker compose network to connect them)
 services:
   s3_minio:
     image: minio/minio:latest

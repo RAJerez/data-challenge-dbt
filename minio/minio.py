@@ -13,6 +13,7 @@ for name in buckets:
     try:
         # Create a 'raw' bucket
         s3.create_bucket(Bucket=name)
+        # TODO: always is nice to have a logging package (check logging python library)
         print(f"Bucket {name} created succesfully")
 
     except ClientError as e:

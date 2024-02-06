@@ -13,6 +13,8 @@ def run_load():
         log.info(f"Loading {name}")
         try:
             RawLoader(table_name=name).load_table(file_path=path)
+            # TODO: Keep one language when coding (english or spanish not both)
+            # TODO: Suggestion: use mypy, black and pylint (and maybe other linters) in order to make more code readable
             log.info("Done")
             print(f"Data {name} cargada correctamente")
         except exc.SQLAlchemyError as e:

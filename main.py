@@ -14,13 +14,13 @@ def run_load():
         try:
             RawLoader(table_name=name).load_table(file_path=path)
             log.info("Done")
-            print(f"Data {name} cargada correctamente")
+            print(f"Data {name} loaded correctly")
         except exc.SQLAlchemyError as e:
-            # Errores específicos de SQLAlchemy
-            print(f"Error al cargar la data {name}: {e}")
+            # SQLAlchemy Specific Errors
+            print(f"Error loading data {name}: {e}")
         except Exception as e:
-            # Excepciones generales
-            print(f"Error inesperado: {e}")
+            # General exceptions
+            print(f"Unexpected error: {e}")
             
 
 if __name__ == "__main__":

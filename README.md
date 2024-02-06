@@ -1,15 +1,15 @@
 # Data Challenge - DBT
 
-Este proyecto se centra en el procesamiento de datos del desafío de data "data-challenge", esta vez aplicando modelos DBT.
+This project focuses on data processing for the data-challenge, this time applying DBT models.
 
-Se consumirán datos desde 3 tablas con información en crudo sobre bibliotecas, museos y salas de cines argentinos en una base de datos Postgres.
+Data will be consumed from 3 tables with raw information about Argentine libraries, museums and cinemas in a Postgres database.
 
-## Procesamiento de datos
-El procesamiento de datos permitirá a nuestro proyecto transformar los datos de los
-archivos fuente en la información que va a nutrir la base de datos. Para esto, el
-proyecto deberá:
+## Data processing
+Data processing will allow our project to transform the data of the
+source files in the information that will feed the database. For this, the
+project must:
 
-- Normalizar toda la información de museos, cines y bibliotecas y generar tablas que cuenten con las siguientes columnas.
+- Normalize all the information from museums, cinemas and libraries and generate tables that have the following columns.
     - cod_localidad
     - id_provincia
     - id_departamento
@@ -23,39 +23,45 @@ proyecto deberá:
     - mail
     - web
 
-- Procesar los datos conjuntos para poder generar una tabla con la siguiente información:
+- Process the joint data to generate a table with the following information:
     - Cantidad de registros totales por categoría
     - Cantidad de registros totales por fuente
     - Cantidad de registros por provincia y categoría
 
 
-- Procesar la información de cines para poder crear una tabla que contenga:
+- Process the cinema information to create a table that contains:
     - Provincia
     - Cantidad de pantallas
     - Cantidad de butacas
     - Cantidad de espacios INCAA
 
 
-## Prerequisitos
+## Pre requirements
+
+- python==3.10
+- docker==25.0.12
+- dbt-postgres==1.7.4
+- poetry==1.7.1
+
 #### Poetry
-Utilizé Poetry para un mejor manejo de dependecias y también para crear mi entorno virtual.
+I used Poetry 1.7.1 for better dependency management and also to create my virtual environment.
 
-Instalar poetry desde pipx y la instalación se realizara aislada del entorno global
+Install poetry from pipx and the installation will be carried out isolated from the global environment
     
-    pipx install poetry
+    pipx install poetry==1.7.1
 
-Para instalar las dependencias necesarias descriptas en pyproyect.toml
+To install the necessary dependencies described in pyproyect.toml
 
     poetry install
 
-Automaticamente se creara un entorno virtual al cual puede acceder
+A virtual environment will automatically be created that you can access
 
     poetry shell
 
 
-#### Opción sin Poetry
-En caso de no usar poetry puede instalar las dependencias a traves de requirements.txt
-El proyecto se realizó con Python 3.10
+#### Option without Poetry
+If you do not use poetry you can install the dependencies through requirements.txt
+The project was carried out with Python 3.10
 
     python3 -m virtualenv venv
 
@@ -64,20 +70,20 @@ El proyecto se realizó con Python 3.10
     pip install -r 'requirements.txt'
 
 
-## Creación de base de datos, tablas y ejecución de pipeline
-Levanto contenedor con Base de datos Postgres:
+## Creation of database, tables and pipeline execution
+I build a container with Postgres Database:
 
     sudo docker compose up -d
 
-Puede acceder a la base de datos desde bash:
+You can access the database from bash:
 
     docker exec -it postgres psql -U postgres -d data-challenge-dbt
 
-Carga de datos crudos en base de datos
-El siguiente script realiza la conexión con la base de datos y realiza la carga.
+Loading raw data into database
+The following script connects to the database and loads.
 
     python3 main.py
 
-Ejecutar modelos de dbt:
+Run dbt models:
 
     dbt run

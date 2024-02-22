@@ -4503,3 +4503,1033 @@ drop view if exists "data-challenge-dbt"."public"."my_second_dbt_model__dbt_back
 [0m20:26:17.983100 [debug] [MainThread]: Command `dbt run` succeeded at 20:26:17.982819 after 2.67 seconds
 [0m20:26:17.983907 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f93032fffd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9301233490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f92ff7f26e0>]}
 [0m20:26:17.984760 [debug] [MainThread]: Flushing usage events
+[0m11:54:26.761997 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5c90547fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5c8e591d50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5c8e591cf0>]}
+
+
+============================== 11:54:26.818164 | 82bb13a1-e51e-478e-93ff-1c930cf48595 ==============================
+[0m11:54:26.818164 [info ] [MainThread]: Running with dbt=1.7.4
+[0m11:54:26.822756 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/agustin/.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/home/agustin/Documentos/data-challenge-dbt/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt run', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m11:54:28.205045 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '82bb13a1-e51e-478e-93ff-1c930cf48595', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5c8ef5c400>]}
+[0m11:54:28.402471 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '82bb13a1-e51e-478e-93ff-1c930cf48595', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5c8db77550>]}
+[0m11:54:28.431515 [info ] [MainThread]: Registered adapter: postgres=1.7.4
+[0m11:54:28.455066 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m11:54:28.490391 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m11:54:28.491307 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m11:54:28.492198 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '82bb13a1-e51e-478e-93ff-1c930cf48595', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5c8df8d450>]}
+[0m11:54:30.786556 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.data_challenge_dbt.challenge.size_by_categoty_province
+[0m11:54:30.796064 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '82bb13a1-e51e-478e-93ff-1c930cf48595', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5c8c75e080>]}
+[0m11:54:30.840627 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '82bb13a1-e51e-478e-93ff-1c930cf48595', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5c8e47d540>]}
+[0m11:54:30.841597 [info ] [MainThread]: Found 6 models, 18 tests, 0 sources, 0 exposures, 0 metrics, 401 macros, 0 groups, 0 semantic models
+[0m11:54:30.842385 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '82bb13a1-e51e-478e-93ff-1c930cf48595', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5c8dea6bc0>]}
+[0m11:54:30.846959 [info ] [MainThread]: 
+[0m11:54:30.848948 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:54:30.852131 [debug] [ThreadPool]: Acquiring new postgres connection 'list_data-challenge-dbt'
+[0m11:54:30.873107 [debug] [ThreadPool]: Using postgres connection "list_data-challenge-dbt"
+[0m11:54:30.873943 [debug] [ThreadPool]: On list_data-challenge-dbt: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "connection_name": "list_data-challenge-dbt"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:54:30.874632 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:54:31.020932 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.0 seconds
+[0m11:54:31.024971 [debug] [ThreadPool]: On list_data-challenge-dbt: Close
+[0m11:54:31.030722 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_data-challenge-dbt, now list_data-challenge-dbt_public)
+[0m11:54:31.042118 [debug] [ThreadPool]: Using postgres connection "list_data-challenge-dbt_public"
+[0m11:54:31.042996 [debug] [ThreadPool]: On list_data-challenge-dbt_public: BEGIN
+[0m11:54:31.043826 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:54:31.050399 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m11:54:31.051671 [debug] [ThreadPool]: Using postgres connection "list_data-challenge-dbt_public"
+[0m11:54:31.052858 [debug] [ThreadPool]: On list_data-challenge-dbt_public: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "connection_name": "list_data-challenge-dbt_public"} */
+select
+      'data-challenge-dbt' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'data-challenge-dbt' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'data-challenge-dbt' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m11:54:31.058359 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.0 seconds
+[0m11:54:31.060496 [debug] [ThreadPool]: On list_data-challenge-dbt_public: ROLLBACK
+[0m11:54:31.061684 [debug] [ThreadPool]: On list_data-challenge-dbt_public: Close
+[0m11:54:31.069977 [debug] [MainThread]: Using postgres connection "master"
+[0m11:54:31.070845 [debug] [MainThread]: On master: BEGIN
+[0m11:54:31.071608 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:54:31.077659 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:54:31.078901 [debug] [MainThread]: Using postgres connection "master"
+[0m11:54:31.080753 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m11:54:31.087624 [debug] [MainThread]: SQL status: SELECT 0 in 0.0 seconds
+[0m11:54:31.089759 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '82bb13a1-e51e-478e-93ff-1c930cf48595', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5c8c75ffd0>]}
+[0m11:54:31.090674 [debug] [MainThread]: On master: ROLLBACK
+[0m11:54:31.091853 [debug] [MainThread]: Using postgres connection "master"
+[0m11:54:31.092641 [debug] [MainThread]: On master: BEGIN
+[0m11:54:31.094073 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:54:31.094882 [debug] [MainThread]: On master: COMMIT
+[0m11:54:31.095717 [debug] [MainThread]: Using postgres connection "master"
+[0m11:54:31.096468 [debug] [MainThread]: On master: COMMIT
+[0m11:54:31.097623 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m11:54:31.098683 [debug] [MainThread]: On master: Close
+[0m11:54:31.100612 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:54:31.102298 [info ] [MainThread]: 
+[0m11:54:31.137170 [debug] [Thread-1 (]: Began running node model.data_challenge_dbt.bibliotecas
+[0m11:54:31.139856 [info ] [Thread-1 (]: 1 of 6 START sql table model public.bibliotecas ................................ [RUN]
+[0m11:54:31.143337 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_data-challenge-dbt_public, now model.data_challenge_dbt.bibliotecas)
+[0m11:54:31.144867 [debug] [Thread-1 (]: Began compiling node model.data_challenge_dbt.bibliotecas
+[0m11:54:31.160944 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_challenge_dbt.bibliotecas"
+[0m11:54:31.164073 [debug] [Thread-1 (]: Timing info for model.data_challenge_dbt.bibliotecas (compile): 11:54:31.145713 => 11:54:31.163113
+[0m11:54:31.165386 [debug] [Thread-1 (]: Began executing node model.data_challenge_dbt.bibliotecas
+[0m11:54:31.235312 [debug] [Thread-1 (]: Writing runtime sql for node "model.data_challenge_dbt.bibliotecas"
+[0m11:54:31.236883 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.bibliotecas"
+[0m11:54:31.237806 [debug] [Thread-1 (]: On model.data_challenge_dbt.bibliotecas: BEGIN
+[0m11:54:31.238609 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:54:31.244786 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m11:54:31.245740 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.bibliotecas"
+[0m11:54:31.246604 [debug] [Thread-1 (]: On model.data_challenge_dbt.bibliotecas: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "node_id": "model.data_challenge_dbt.bibliotecas"} */
+
+  
+    
+
+  create  table "data-challenge-dbt"."public"."bibliotecas__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+select
+    "cod_localidad" as cod_localidad,
+    "id_provincia" as id_provincia,
+    "id_departamento" as id_departamento,
+    "provincia" as provincia,
+    "categoria" as categoria,
+    "domicilio" as domicilio,
+    "cp" as codigo_postal,
+    "localidad" as localidad,
+    "nombre" as nombre,
+    "telefono" as telefono,
+    "mail" as mail,
+    "web" as web
+FROM raw_biblioteca
+  );
+  
+[0m11:54:31.248235 [debug] [Thread-1 (]: Postgres adapter: Postgres error: relation "raw_biblioteca" does not exist
+LINE 27: FROM raw_biblioteca
+              ^
+
+[0m11:54:31.249208 [debug] [Thread-1 (]: On model.data_challenge_dbt.bibliotecas: ROLLBACK
+[0m11:54:31.250657 [debug] [Thread-1 (]: Timing info for model.data_challenge_dbt.bibliotecas (execute): 11:54:31.165973 => 11:54:31.250165
+[0m11:54:31.251617 [debug] [Thread-1 (]: On model.data_challenge_dbt.bibliotecas: Close
+[0m11:54:31.351245 [debug] [Thread-1 (]: Database Error in model bibliotecas (data_challenge_dbt/models/challenge/bibliotecas.sql)
+  relation "raw_biblioteca" does not exist
+  LINE 27: FROM raw_biblioteca
+                ^
+  compiled Code at target/run/data_challenge_dbt/data_challenge_dbt/models/challenge/bibliotecas.sql
+[0m11:54:31.353916 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '82bb13a1-e51e-478e-93ff-1c930cf48595', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5c8c7d7010>]}
+[0m11:54:31.357086 [error] [Thread-1 (]: 1 of 6 ERROR creating sql table model public.bibliotecas ....................... [[31mERROR[0m in 0.21s]
+[0m11:54:31.360285 [debug] [Thread-1 (]: Finished running node model.data_challenge_dbt.bibliotecas
+[0m11:54:31.362460 [debug] [Thread-1 (]: Began running node model.data_challenge_dbt.cines
+[0m11:54:31.365954 [info ] [Thread-1 (]: 2 of 6 START sql table model public.cines ...................................... [RUN]
+[0m11:54:31.369635 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.data_challenge_dbt.bibliotecas, now model.data_challenge_dbt.cines)
+[0m11:54:31.372382 [debug] [Thread-1 (]: Began compiling node model.data_challenge_dbt.cines
+[0m11:54:31.383492 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_challenge_dbt.cines"
+[0m11:54:31.385624 [debug] [Thread-1 (]: Timing info for model.data_challenge_dbt.cines (compile): 11:54:31.373845 => 11:54:31.384649
+[0m11:54:31.388148 [debug] [Thread-1 (]: Began executing node model.data_challenge_dbt.cines
+[0m11:54:31.399583 [debug] [Thread-1 (]: Writing runtime sql for node "model.data_challenge_dbt.cines"
+[0m11:54:31.400886 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.cines"
+[0m11:54:31.401867 [debug] [Thread-1 (]: On model.data_challenge_dbt.cines: BEGIN
+[0m11:54:31.403728 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:54:31.410448 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m11:54:31.411337 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.cines"
+[0m11:54:31.412199 [debug] [Thread-1 (]: On model.data_challenge_dbt.cines: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "node_id": "model.data_challenge_dbt.cines"} */
+
+  
+    
+
+  create  table "data-challenge-dbt"."public"."cines__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- Antes hay que crear las siguientes columnas: telefono y mail
+
+
+
+select
+    "cod_localidad" as cod_localidad,
+    "id_provincia" as id_provincia,
+    "id_departamento" as id_departamento,
+    "provincia" as provincia,
+    "categoria" as categoria,
+    "direccion" as domicilio,
+    "cp" as codigo_postal,
+    "localidad" as localidad,
+    "nombre" as nombre,
+    NULL as telefono,
+    NULL as mail,
+    "web" as web
+FROM raw_cine
+  );
+  
+[0m11:54:31.414238 [debug] [Thread-1 (]: Postgres adapter: Postgres error: relation "raw_cine" does not exist
+LINE 29: FROM raw_cine
+              ^
+
+[0m11:54:31.415528 [debug] [Thread-1 (]: On model.data_challenge_dbt.cines: ROLLBACK
+[0m11:54:31.417206 [debug] [Thread-1 (]: Timing info for model.data_challenge_dbt.cines (execute): 11:54:31.389202 => 11:54:31.416697
+[0m11:54:31.418069 [debug] [Thread-1 (]: On model.data_challenge_dbt.cines: Close
+[0m11:54:31.420470 [debug] [Thread-1 (]: Database Error in model cines (data_challenge_dbt/models/challenge/cines.sql)
+  relation "raw_cine" does not exist
+  LINE 29: FROM raw_cine
+                ^
+  compiled Code at target/run/data_challenge_dbt/data_challenge_dbt/models/challenge/cines.sql
+[0m11:54:31.421660 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '82bb13a1-e51e-478e-93ff-1c930cf48595', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5c8c7ec5b0>]}
+[0m11:54:31.423021 [error] [Thread-1 (]: 2 of 6 ERROR creating sql table model public.cines ............................. [[31mERROR[0m in 0.05s]
+[0m11:54:31.424413 [debug] [Thread-1 (]: Finished running node model.data_challenge_dbt.cines
+[0m11:54:31.425335 [debug] [Thread-1 (]: Began running node model.data_challenge_dbt.cines_insights
+[0m11:54:31.426499 [info ] [Thread-1 (]: 3 of 6 START sql table model public.cines_insights ............................. [RUN]
+[0m11:54:31.428247 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.data_challenge_dbt.cines, now model.data_challenge_dbt.cines_insights)
+[0m11:54:31.429199 [debug] [Thread-1 (]: Began compiling node model.data_challenge_dbt.cines_insights
+[0m11:54:31.434238 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_challenge_dbt.cines_insights"
+[0m11:54:31.435590 [debug] [Thread-1 (]: Timing info for model.data_challenge_dbt.cines_insights (compile): 11:54:31.429718 => 11:54:31.435073
+[0m11:54:31.436469 [debug] [Thread-1 (]: Began executing node model.data_challenge_dbt.cines_insights
+[0m11:54:31.444550 [debug] [Thread-1 (]: Writing runtime sql for node "model.data_challenge_dbt.cines_insights"
+[0m11:54:31.445819 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.cines_insights"
+[0m11:54:31.446627 [debug] [Thread-1 (]: On model.data_challenge_dbt.cines_insights: BEGIN
+[0m11:54:31.447416 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:54:31.455226 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m11:54:31.456732 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.cines_insights"
+[0m11:54:31.457940 [debug] [Thread-1 (]: On model.data_challenge_dbt.cines_insights: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "node_id": "model.data_challenge_dbt.cines_insights"} */
+
+  
+    
+
+  create  table "data-challenge-dbt"."public"."cines_insights__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+SELECT 
+"provincia" AS provincia,
+SUM("pantallas") AS pantallas,
+SUM("butacas") AS butacas,
+COUNT(CASE WHEN "espacio_incaa" = 'Si' THEN 1 END) AS espacios_incaa
+FROM raw_cine
+GROUP BY "provincia"
+
+
+/*
+COLUMNAS raw_cine
+'cod_localidad', 'id_provincia', 'id_departamento', 'categoria',
+'provincia', 'departamento', 'localidad', 'nombre', 'direccion', 'piso',
+'cp', 'web', 'latitud', 'longitud', 'tipo_latitud_longitud', 'fuente',
+'sector', 'pantallas', 'butacas', 'tipo_de_gestion', 'espacio_incaa',
+'año_actualizacion'
+*/
+  );
+  
+[0m11:54:31.459806 [debug] [Thread-1 (]: Postgres adapter: Postgres error: relation "raw_cine" does not exist
+LINE 19: FROM raw_cine
+              ^
+
+[0m11:54:31.460726 [debug] [Thread-1 (]: On model.data_challenge_dbt.cines_insights: ROLLBACK
+[0m11:54:31.462243 [debug] [Thread-1 (]: Timing info for model.data_challenge_dbt.cines_insights (execute): 11:54:31.437020 => 11:54:31.461747
+[0m11:54:31.463095 [debug] [Thread-1 (]: On model.data_challenge_dbt.cines_insights: Close
+[0m11:54:31.467804 [debug] [Thread-1 (]: Database Error in model cines_insights (data_challenge_dbt/models/challenge/cines_insights.sql)
+  relation "raw_cine" does not exist
+  LINE 19: FROM raw_cine
+                ^
+  compiled Code at target/run/data_challenge_dbt/data_challenge_dbt/models/challenge/cines_insights.sql
+[0m11:54:31.468900 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '82bb13a1-e51e-478e-93ff-1c930cf48595', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5c8c7ee350>]}
+[0m11:54:31.470802 [error] [Thread-1 (]: 3 of 6 ERROR creating sql table model public.cines_insights .................... [[31mERROR[0m in 0.04s]
+[0m11:54:31.472295 [debug] [Thread-1 (]: Finished running node model.data_challenge_dbt.cines_insights
+[0m11:54:31.473227 [debug] [Thread-1 (]: Began running node model.data_challenge_dbt.museos
+[0m11:54:31.474294 [info ] [Thread-1 (]: 4 of 6 START sql table model public.museos ..................................... [RUN]
+[0m11:54:31.475745 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.data_challenge_dbt.cines_insights, now model.data_challenge_dbt.museos)
+[0m11:54:31.476697 [debug] [Thread-1 (]: Began compiling node model.data_challenge_dbt.museos
+[0m11:54:31.484712 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_challenge_dbt.museos"
+[0m11:54:31.486712 [debug] [Thread-1 (]: Timing info for model.data_challenge_dbt.museos (compile): 11:54:31.477314 => 11:54:31.485946
+[0m11:54:31.487980 [debug] [Thread-1 (]: Began executing node model.data_challenge_dbt.museos
+[0m11:54:31.496087 [debug] [Thread-1 (]: Writing runtime sql for node "model.data_challenge_dbt.museos"
+[0m11:54:31.497323 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.museos"
+[0m11:54:31.498217 [debug] [Thread-1 (]: On model.data_challenge_dbt.museos: BEGIN
+[0m11:54:31.499115 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:54:31.505814 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m11:54:31.507296 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.museos"
+[0m11:54:31.508864 [debug] [Thread-1 (]: On model.data_challenge_dbt.museos: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "node_id": "model.data_challenge_dbt.museos"} */
+
+  
+    
+
+  create  table "data-challenge-dbt"."public"."museos__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+select
+    "Cod_Loc" as cod_localidad,
+    "IdProvincia" as id_provincia,
+    "IdDepartamento" as id_departamento,
+    "provincia" as provincia,
+    "categoria" as categoria,
+    "direccion" as domicilio,
+    "CP" as codigo_postal,
+    "localidad" as localidad,
+    "nombre" as nombre,
+    "telefono" as telefono,
+    "Mail" as mail,
+    "Web" as web
+FROM raw_museo
+  );
+  
+[0m11:54:31.511267 [debug] [Thread-1 (]: Postgres adapter: Postgres error: relation "raw_museo" does not exist
+LINE 27: FROM raw_museo
+              ^
+
+[0m11:54:31.512932 [debug] [Thread-1 (]: On model.data_challenge_dbt.museos: ROLLBACK
+[0m11:54:31.514610 [debug] [Thread-1 (]: Timing info for model.data_challenge_dbt.museos (execute): 11:54:31.488512 => 11:54:31.514076
+[0m11:54:31.515822 [debug] [Thread-1 (]: On model.data_challenge_dbt.museos: Close
+[0m11:54:31.518411 [debug] [Thread-1 (]: Database Error in model museos (data_challenge_dbt/models/challenge/museos.sql)
+  relation "raw_museo" does not exist
+  LINE 27: FROM raw_museo
+                ^
+  compiled Code at target/run/data_challenge_dbt/data_challenge_dbt/models/challenge/museos.sql
+[0m11:54:31.519605 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '82bb13a1-e51e-478e-93ff-1c930cf48595', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5c8c7ef310>]}
+[0m11:54:31.520983 [error] [Thread-1 (]: 4 of 6 ERROR creating sql table model public.museos ............................ [[31mERROR[0m in 0.04s]
+[0m11:54:31.522255 [debug] [Thread-1 (]: Finished running node model.data_challenge_dbt.museos
+[0m11:54:31.523163 [debug] [Thread-1 (]: Began running node model.data_challenge_dbt.size_by_category
+[0m11:54:31.524739 [info ] [Thread-1 (]: 5 of 6 START sql table model public.size_by_category ........................... [RUN]
+[0m11:54:31.526675 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.data_challenge_dbt.museos, now model.data_challenge_dbt.size_by_category)
+[0m11:54:31.527889 [debug] [Thread-1 (]: Began compiling node model.data_challenge_dbt.size_by_category
+[0m11:54:31.533215 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_challenge_dbt.size_by_category"
+[0m11:54:31.535334 [debug] [Thread-1 (]: Timing info for model.data_challenge_dbt.size_by_category (compile): 11:54:31.528418 => 11:54:31.534487
+[0m11:54:31.536675 [debug] [Thread-1 (]: Began executing node model.data_challenge_dbt.size_by_category
+[0m11:54:31.545773 [debug] [Thread-1 (]: Writing runtime sql for node "model.data_challenge_dbt.size_by_category"
+[0m11:54:31.546994 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.size_by_category"
+[0m11:54:31.547907 [debug] [Thread-1 (]: On model.data_challenge_dbt.size_by_category: BEGIN
+[0m11:54:31.548957 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:54:31.557891 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m11:54:31.559795 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.size_by_category"
+[0m11:54:31.560658 [debug] [Thread-1 (]: On model.data_challenge_dbt.size_by_category: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "node_id": "model.data_challenge_dbt.size_by_category"} */
+
+  
+    
+
+  create  table "data-challenge-dbt"."public"."size_by_category__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+WITH categorias AS (
+    SELECT categoria FROM cines
+    UNION ALL
+    SELECT categoria FROM museos
+    UNION ALL
+    SELECT categoria FROM bibliotecas
+)
+
+SELECT
+    categoria,
+    COUNT(*) AS cantidad
+FROM categorias
+GROUP BY categoria
+  );
+  
+[0m11:54:31.562265 [debug] [Thread-1 (]: Postgres adapter: Postgres error: relation "cines" does not exist
+LINE 15:     SELECT categoria FROM cines
+                                   ^
+
+[0m11:54:31.563138 [debug] [Thread-1 (]: On model.data_challenge_dbt.size_by_category: ROLLBACK
+[0m11:54:31.564802 [debug] [Thread-1 (]: Timing info for model.data_challenge_dbt.size_by_category (execute): 11:54:31.537255 => 11:54:31.564299
+[0m11:54:31.565710 [debug] [Thread-1 (]: On model.data_challenge_dbt.size_by_category: Close
+[0m11:54:31.570781 [debug] [Thread-1 (]: Database Error in model size_by_category (data_challenge_dbt/models/challenge/size_by_category.sql)
+  relation "cines" does not exist
+  LINE 15:     SELECT categoria FROM cines
+                                     ^
+  compiled Code at target/run/data_challenge_dbt/data_challenge_dbt/models/challenge/size_by_category.sql
+[0m11:54:31.571836 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '82bb13a1-e51e-478e-93ff-1c930cf48595', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5c8c3d7700>]}
+[0m11:54:31.572983 [error] [Thread-1 (]: 5 of 6 ERROR creating sql table model public.size_by_category .................. [[31mERROR[0m in 0.05s]
+[0m11:54:31.574291 [debug] [Thread-1 (]: Finished running node model.data_challenge_dbt.size_by_category
+[0m11:54:31.575195 [debug] [Thread-1 (]: Began running node model.data_challenge_dbt.size_by_category_province
+[0m11:54:31.576236 [info ] [Thread-1 (]: 6 of 6 SKIP relation public.size_by_category_province .......................... [[33mSKIP[0m]
+[0m11:54:31.577337 [debug] [Thread-1 (]: Finished running node model.data_challenge_dbt.size_by_category_province
+[0m11:54:31.580079 [debug] [MainThread]: Using postgres connection "master"
+[0m11:54:31.581246 [debug] [MainThread]: On master: BEGIN
+[0m11:54:31.583243 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:54:31.590277 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:54:31.591095 [debug] [MainThread]: On master: COMMIT
+[0m11:54:31.591798 [debug] [MainThread]: Using postgres connection "master"
+[0m11:54:31.592465 [debug] [MainThread]: On master: COMMIT
+[0m11:54:31.593419 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m11:54:31.594258 [debug] [MainThread]: On master: Close
+[0m11:54:31.596488 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:54:31.597299 [debug] [MainThread]: Connection 'model.data_challenge_dbt.size_by_category' was properly closed.
+[0m11:54:31.598103 [info ] [MainThread]: 
+[0m11:54:31.599122 [info ] [MainThread]: Finished running 6 table models in 0 hours 0 minutes and 0.75 seconds (0.75s).
+[0m11:54:31.601820 [debug] [MainThread]: Command end result
+[0m11:54:31.620014 [info ] [MainThread]: 
+[0m11:54:31.620972 [info ] [MainThread]: [31mCompleted with 5 errors and 0 warnings:[0m
+[0m11:54:31.621775 [info ] [MainThread]: 
+[0m11:54:31.622596 [error] [MainThread]:   Database Error in model bibliotecas (data_challenge_dbt/models/challenge/bibliotecas.sql)
+  relation "raw_biblioteca" does not exist
+  LINE 27: FROM raw_biblioteca
+                ^
+  compiled Code at target/run/data_challenge_dbt/data_challenge_dbt/models/challenge/bibliotecas.sql
+[0m11:54:31.623496 [info ] [MainThread]: 
+[0m11:54:31.624407 [error] [MainThread]:   Database Error in model cines (data_challenge_dbt/models/challenge/cines.sql)
+  relation "raw_cine" does not exist
+  LINE 29: FROM raw_cine
+                ^
+  compiled Code at target/run/data_challenge_dbt/data_challenge_dbt/models/challenge/cines.sql
+[0m11:54:31.625192 [info ] [MainThread]: 
+[0m11:54:31.625989 [error] [MainThread]:   Database Error in model cines_insights (data_challenge_dbt/models/challenge/cines_insights.sql)
+  relation "raw_cine" does not exist
+  LINE 19: FROM raw_cine
+                ^
+  compiled Code at target/run/data_challenge_dbt/data_challenge_dbt/models/challenge/cines_insights.sql
+[0m11:54:31.626881 [info ] [MainThread]: 
+[0m11:54:31.628033 [error] [MainThread]:   Database Error in model museos (data_challenge_dbt/models/challenge/museos.sql)
+  relation "raw_museo" does not exist
+  LINE 27: FROM raw_museo
+                ^
+  compiled Code at target/run/data_challenge_dbt/data_challenge_dbt/models/challenge/museos.sql
+[0m11:54:31.629523 [info ] [MainThread]: 
+[0m11:54:31.630860 [error] [MainThread]:   Database Error in model size_by_category (data_challenge_dbt/models/challenge/size_by_category.sql)
+  relation "cines" does not exist
+  LINE 15:     SELECT categoria FROM cines
+                                     ^
+  compiled Code at target/run/data_challenge_dbt/data_challenge_dbt/models/challenge/size_by_category.sql
+[0m11:54:31.631872 [info ] [MainThread]: 
+[0m11:54:31.632741 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=5 SKIP=1 TOTAL=6
+[0m11:54:31.634306 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 5.015282, "process_user_time": 7.869228, "process_kernel_time": 0.700381, "process_mem_max_rss": "112488", "process_in_blocks": "58264", "process_out_blocks": "2800", "command_success": false}
+[0m11:54:31.635449 [debug] [MainThread]: Command `dbt run` failed at 11:54:31.635170 after 5.02 seconds
+[0m11:54:31.636332 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5c90547fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5c8df8c7f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5c8cf4e140>]}
+[0m11:54:31.637195 [debug] [MainThread]: Flushing usage events
+[0m12:45:37.567726 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e29ba3fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e27e91d50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e27e91cf0>]}
+
+
+============================== 12:45:37.572401 | 40602fcc-da69-4db1-82fd-c1e317be0cc6 ==============================
+[0m12:45:37.572401 [info ] [MainThread]: Running with dbt=1.7.4
+[0m12:45:37.573538 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/home/agustin/Documentos/data-challenge-dbt/logs', 'profiles_dir': '/home/agustin/.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt run', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m12:45:37.896183 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '40602fcc-da69-4db1-82fd-c1e317be0cc6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e28850400>]}
+[0m12:45:38.079220 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '40602fcc-da69-4db1-82fd-c1e317be0cc6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e27377550>]}
+[0m12:45:38.080608 [info ] [MainThread]: Registered adapter: postgres=1.7.4
+[0m12:45:38.094842 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m12:45:38.147252 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:45:38.148200 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:45:38.150396 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.data_challenge_dbt.challenge.size_by_categoty_province
+[0m12:45:38.160728 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '40602fcc-da69-4db1-82fd-c1e317be0cc6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e26ba80d0>]}
+[0m12:45:38.183214 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '40602fcc-da69-4db1-82fd-c1e317be0cc6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e26b5ecb0>]}
+[0m12:45:38.184237 [info ] [MainThread]: Found 6 models, 18 tests, 0 sources, 0 exposures, 0 metrics, 401 macros, 0 groups, 0 semantic models
+[0m12:45:38.185134 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '40602fcc-da69-4db1-82fd-c1e317be0cc6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e26b5ef20>]}
+[0m12:45:38.188850 [info ] [MainThread]: 
+[0m12:45:38.191165 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m12:45:38.193640 [debug] [ThreadPool]: Acquiring new postgres connection 'list_data-challenge-dbt'
+[0m12:45:38.214230 [debug] [ThreadPool]: Using postgres connection "list_data-challenge-dbt"
+[0m12:45:38.215111 [debug] [ThreadPool]: On list_data-challenge-dbt: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "connection_name": "list_data-challenge-dbt"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m12:45:38.216613 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:45:38.225849 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.0 seconds
+[0m12:45:38.228205 [debug] [ThreadPool]: On list_data-challenge-dbt: Close
+[0m12:45:38.231970 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_data-challenge-dbt, now list_data-challenge-dbt_public)
+[0m12:45:38.242682 [debug] [ThreadPool]: Using postgres connection "list_data-challenge-dbt_public"
+[0m12:45:38.243576 [debug] [ThreadPool]: On list_data-challenge-dbt_public: BEGIN
+[0m12:45:38.244449 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:45:38.250766 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m12:45:38.252138 [debug] [ThreadPool]: Using postgres connection "list_data-challenge-dbt_public"
+[0m12:45:38.253252 [debug] [ThreadPool]: On list_data-challenge-dbt_public: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "connection_name": "list_data-challenge-dbt_public"} */
+select
+      'data-challenge-dbt' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'data-challenge-dbt' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'data-challenge-dbt' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m12:45:38.258478 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.0 seconds
+[0m12:45:38.261022 [debug] [ThreadPool]: On list_data-challenge-dbt_public: ROLLBACK
+[0m12:45:38.262144 [debug] [ThreadPool]: On list_data-challenge-dbt_public: Close
+[0m12:45:38.273362 [debug] [MainThread]: Using postgres connection "master"
+[0m12:45:38.274139 [debug] [MainThread]: On master: BEGIN
+[0m12:45:38.274781 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:45:38.281603 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m12:45:38.282860 [debug] [MainThread]: Using postgres connection "master"
+[0m12:45:38.284211 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m12:45:38.296772 [debug] [MainThread]: SQL status: SELECT 0 in 0.0 seconds
+[0m12:45:38.298859 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '40602fcc-da69-4db1-82fd-c1e317be0cc6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e26bdf850>]}
+[0m12:45:38.300018 [debug] [MainThread]: On master: ROLLBACK
+[0m12:45:38.301111 [debug] [MainThread]: Using postgres connection "master"
+[0m12:45:38.301889 [debug] [MainThread]: On master: BEGIN
+[0m12:45:38.303264 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m12:45:38.304273 [debug] [MainThread]: On master: COMMIT
+[0m12:45:38.305013 [debug] [MainThread]: Using postgres connection "master"
+[0m12:45:38.305834 [debug] [MainThread]: On master: COMMIT
+[0m12:45:38.306821 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m12:45:38.307702 [debug] [MainThread]: On master: Close
+[0m12:45:38.309239 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m12:45:38.310206 [info ] [MainThread]: 
+[0m12:45:38.314099 [debug] [Thread-1 (]: Began running node model.data_challenge_dbt.bibliotecas
+[0m12:45:38.315149 [info ] [Thread-1 (]: 1 of 6 START sql table model public.bibliotecas ................................ [RUN]
+[0m12:45:38.316714 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_data-challenge-dbt_public, now model.data_challenge_dbt.bibliotecas)
+[0m12:45:38.317593 [debug] [Thread-1 (]: Began compiling node model.data_challenge_dbt.bibliotecas
+[0m12:45:38.332231 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_challenge_dbt.bibliotecas"
+[0m12:45:38.333772 [debug] [Thread-1 (]: Timing info for model.data_challenge_dbt.bibliotecas (compile): 12:45:38.318097 => 12:45:38.333130
+[0m12:45:38.334627 [debug] [Thread-1 (]: Began executing node model.data_challenge_dbt.bibliotecas
+[0m12:45:38.406842 [debug] [Thread-1 (]: Writing runtime sql for node "model.data_challenge_dbt.bibliotecas"
+[0m12:45:38.408332 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.bibliotecas"
+[0m12:45:38.409229 [debug] [Thread-1 (]: On model.data_challenge_dbt.bibliotecas: BEGIN
+[0m12:45:38.409992 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:45:38.416281 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m12:45:38.417198 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.bibliotecas"
+[0m12:45:38.418051 [debug] [Thread-1 (]: On model.data_challenge_dbt.bibliotecas: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "node_id": "model.data_challenge_dbt.bibliotecas"} */
+
+  
+    
+
+  create  table "data-challenge-dbt"."public"."bibliotecas__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+select
+    "cod_localidad" as cod_localidad,
+    "id_provincia" as id_provincia,
+    "id_departamento" as id_departamento,
+    "provincia" as provincia,
+    "categoria" as categoria,
+    "domicilio" as domicilio,
+    "cp" as codigo_postal,
+    "localidad" as localidad,
+    "nombre" as nombre,
+    "telefono" as telefono,
+    "mail" as mail,
+    "web" as web
+FROM raw_biblioteca
+  );
+  
+[0m12:45:38.468268 [debug] [Thread-1 (]: SQL status: SELECT 1902 in 0.0 seconds
+[0m12:45:38.484189 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.bibliotecas"
+[0m12:45:38.485593 [debug] [Thread-1 (]: On model.data_challenge_dbt.bibliotecas: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "node_id": "model.data_challenge_dbt.bibliotecas"} */
+alter table "data-challenge-dbt"."public"."bibliotecas__dbt_tmp" rename to "bibliotecas"
+[0m12:45:38.503531 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m12:45:38.538654 [debug] [Thread-1 (]: On model.data_challenge_dbt.bibliotecas: COMMIT
+[0m12:45:38.539916 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.bibliotecas"
+[0m12:45:38.540831 [debug] [Thread-1 (]: On model.data_challenge_dbt.bibliotecas: COMMIT
+[0m12:45:38.562393 [debug] [Thread-1 (]: SQL status: COMMIT in 0.0 seconds
+[0m12:45:38.574671 [debug] [Thread-1 (]: Applying DROP to: "data-challenge-dbt"."public"."bibliotecas__dbt_backup"
+[0m12:45:38.583827 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.bibliotecas"
+[0m12:45:38.584817 [debug] [Thread-1 (]: On model.data_challenge_dbt.bibliotecas: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "node_id": "model.data_challenge_dbt.bibliotecas"} */
+drop table if exists "data-challenge-dbt"."public"."bibliotecas__dbt_backup" cascade
+[0m12:45:38.586188 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.0 seconds
+[0m12:45:38.589331 [debug] [Thread-1 (]: Timing info for model.data_challenge_dbt.bibliotecas (execute): 12:45:38.335155 => 12:45:38.588869
+[0m12:45:38.590319 [debug] [Thread-1 (]: On model.data_challenge_dbt.bibliotecas: Close
+[0m12:45:38.592700 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '40602fcc-da69-4db1-82fd-c1e317be0cc6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e26baaf80>]}
+[0m12:45:38.595226 [info ] [Thread-1 (]: 1 of 6 OK created sql table model public.bibliotecas ........................... [[32mSELECT 1902[0m in 0.28s]
+[0m12:45:38.596947 [debug] [Thread-1 (]: Finished running node model.data_challenge_dbt.bibliotecas
+[0m12:45:38.597880 [debug] [Thread-1 (]: Began running node model.data_challenge_dbt.cines
+[0m12:45:38.598967 [info ] [Thread-1 (]: 2 of 6 START sql table model public.cines ...................................... [RUN]
+[0m12:45:38.600414 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.data_challenge_dbt.bibliotecas, now model.data_challenge_dbt.cines)
+[0m12:45:38.601285 [debug] [Thread-1 (]: Began compiling node model.data_challenge_dbt.cines
+[0m12:45:38.606715 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_challenge_dbt.cines"
+[0m12:45:38.608213 [debug] [Thread-1 (]: Timing info for model.data_challenge_dbt.cines (compile): 12:45:38.601805 => 12:45:38.607577
+[0m12:45:38.609400 [debug] [Thread-1 (]: Began executing node model.data_challenge_dbt.cines
+[0m12:45:38.617766 [debug] [Thread-1 (]: Writing runtime sql for node "model.data_challenge_dbt.cines"
+[0m12:45:38.619107 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.cines"
+[0m12:45:38.620206 [debug] [Thread-1 (]: On model.data_challenge_dbt.cines: BEGIN
+[0m12:45:38.620992 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:45:38.629035 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m12:45:38.629990 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.cines"
+[0m12:45:38.630839 [debug] [Thread-1 (]: On model.data_challenge_dbt.cines: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "node_id": "model.data_challenge_dbt.cines"} */
+
+  
+    
+
+  create  table "data-challenge-dbt"."public"."cines__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- Antes hay que crear las siguientes columnas: telefono y mail
+
+
+
+select
+    "cod_localidad" as cod_localidad,
+    "id_provincia" as id_provincia,
+    "id_departamento" as id_departamento,
+    "provincia" as provincia,
+    "categoria" as categoria,
+    "direccion" as domicilio,
+    "cp" as codigo_postal,
+    "localidad" as localidad,
+    "nombre" as nombre,
+    NULL as telefono,
+    NULL as mail,
+    "web" as web
+FROM raw_cine
+  );
+  
+[0m12:45:38.673198 [debug] [Thread-1 (]: SQL status: SELECT 316 in 0.0 seconds
+[0m12:45:38.681673 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.cines"
+[0m12:45:38.683334 [debug] [Thread-1 (]: On model.data_challenge_dbt.cines: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "node_id": "model.data_challenge_dbt.cines"} */
+alter table "data-challenge-dbt"."public"."cines__dbt_tmp" rename to "cines"
+[0m12:45:38.685486 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m12:45:38.691615 [debug] [Thread-1 (]: On model.data_challenge_dbt.cines: COMMIT
+[0m12:45:38.692763 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.cines"
+[0m12:45:38.693844 [debug] [Thread-1 (]: On model.data_challenge_dbt.cines: COMMIT
+[0m12:45:38.718378 [debug] [Thread-1 (]: SQL status: COMMIT in 0.0 seconds
+[0m12:45:38.725662 [debug] [Thread-1 (]: Applying DROP to: "data-challenge-dbt"."public"."cines__dbt_backup"
+[0m12:45:38.727537 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.cines"
+[0m12:45:38.728437 [debug] [Thread-1 (]: On model.data_challenge_dbt.cines: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "node_id": "model.data_challenge_dbt.cines"} */
+drop table if exists "data-challenge-dbt"."public"."cines__dbt_backup" cascade
+[0m12:45:38.729722 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.0 seconds
+[0m12:45:38.732678 [debug] [Thread-1 (]: Timing info for model.data_challenge_dbt.cines (execute): 12:45:38.609962 => 12:45:38.732233
+[0m12:45:38.733542 [debug] [Thread-1 (]: On model.data_challenge_dbt.cines: Close
+[0m12:45:38.735082 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '40602fcc-da69-4db1-82fd-c1e317be0cc6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e26793c40>]}
+[0m12:45:38.736376 [info ] [Thread-1 (]: 2 of 6 OK created sql table model public.cines ................................. [[32mSELECT 316[0m in 0.14s]
+[0m12:45:38.737879 [debug] [Thread-1 (]: Finished running node model.data_challenge_dbt.cines
+[0m12:45:38.738911 [debug] [Thread-1 (]: Began running node model.data_challenge_dbt.cines_insights
+[0m12:45:38.740174 [info ] [Thread-1 (]: 3 of 6 START sql table model public.cines_insights ............................. [RUN]
+[0m12:45:38.741574 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.data_challenge_dbt.cines, now model.data_challenge_dbt.cines_insights)
+[0m12:45:38.742435 [debug] [Thread-1 (]: Began compiling node model.data_challenge_dbt.cines_insights
+[0m12:45:38.806233 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_challenge_dbt.cines_insights"
+[0m12:45:38.807969 [debug] [Thread-1 (]: Timing info for model.data_challenge_dbt.cines_insights (compile): 12:45:38.742939 => 12:45:38.807226
+[0m12:45:38.808860 [debug] [Thread-1 (]: Began executing node model.data_challenge_dbt.cines_insights
+[0m12:45:38.817165 [debug] [Thread-1 (]: Writing runtime sql for node "model.data_challenge_dbt.cines_insights"
+[0m12:45:38.818641 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.cines_insights"
+[0m12:45:38.819525 [debug] [Thread-1 (]: On model.data_challenge_dbt.cines_insights: BEGIN
+[0m12:45:38.820512 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:45:38.827203 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m12:45:38.828482 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.cines_insights"
+[0m12:45:38.829374 [debug] [Thread-1 (]: On model.data_challenge_dbt.cines_insights: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "node_id": "model.data_challenge_dbt.cines_insights"} */
+
+  
+    
+
+  create  table "data-challenge-dbt"."public"."cines_insights__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+SELECT 
+"provincia" AS provincia,
+SUM("pantallas") AS pantallas,
+SUM("butacas") AS butacas,
+COUNT(CASE WHEN "espacio_incaa" = 'Si' THEN 1 END) AS espacios_incaa
+FROM raw_cine
+GROUP BY "provincia"
+
+
+/*
+COLUMNAS raw_cine
+'cod_localidad', 'id_provincia', 'id_departamento', 'categoria',
+'provincia', 'departamento', 'localidad', 'nombre', 'direccion', 'piso',
+'cp', 'web', 'latitud', 'longitud', 'tipo_latitud_longitud', 'fuente',
+'sector', 'pantallas', 'butacas', 'tipo_de_gestion', 'espacio_incaa',
+'año_actualizacion'
+*/
+  );
+  
+[0m12:45:38.886256 [debug] [Thread-1 (]: SQL status: SELECT 24 in 0.0 seconds
+[0m12:45:38.898804 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.cines_insights"
+[0m12:45:38.901069 [debug] [Thread-1 (]: On model.data_challenge_dbt.cines_insights: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "node_id": "model.data_challenge_dbt.cines_insights"} */
+alter table "data-challenge-dbt"."public"."cines_insights__dbt_tmp" rename to "cines_insights"
+[0m12:45:38.904130 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m12:45:38.911193 [debug] [Thread-1 (]: On model.data_challenge_dbt.cines_insights: COMMIT
+[0m12:45:38.912280 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.cines_insights"
+[0m12:45:38.913167 [debug] [Thread-1 (]: On model.data_challenge_dbt.cines_insights: COMMIT
+[0m12:45:38.940571 [debug] [Thread-1 (]: SQL status: COMMIT in 0.0 seconds
+[0m12:45:38.945618 [debug] [Thread-1 (]: Applying DROP to: "data-challenge-dbt"."public"."cines_insights__dbt_backup"
+[0m12:45:38.947409 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.cines_insights"
+[0m12:45:38.948314 [debug] [Thread-1 (]: On model.data_challenge_dbt.cines_insights: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "node_id": "model.data_challenge_dbt.cines_insights"} */
+drop table if exists "data-challenge-dbt"."public"."cines_insights__dbt_backup" cascade
+[0m12:45:38.949593 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.0 seconds
+[0m12:45:38.952499 [debug] [Thread-1 (]: Timing info for model.data_challenge_dbt.cines_insights (execute): 12:45:38.809391 => 12:45:38.952053
+[0m12:45:38.953364 [debug] [Thread-1 (]: On model.data_challenge_dbt.cines_insights: Close
+[0m12:45:38.954935 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '40602fcc-da69-4db1-82fd-c1e317be0cc6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e26790880>]}
+[0m12:45:38.957373 [info ] [Thread-1 (]: 3 of 6 OK created sql table model public.cines_insights ........................ [[32mSELECT 24[0m in 0.21s]
+[0m12:45:38.959068 [debug] [Thread-1 (]: Finished running node model.data_challenge_dbt.cines_insights
+[0m12:45:38.960045 [debug] [Thread-1 (]: Began running node model.data_challenge_dbt.museos
+[0m12:45:38.961228 [info ] [Thread-1 (]: 4 of 6 START sql table model public.museos ..................................... [RUN]
+[0m12:45:38.962569 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.data_challenge_dbt.cines_insights, now model.data_challenge_dbt.museos)
+[0m12:45:38.963438 [debug] [Thread-1 (]: Began compiling node model.data_challenge_dbt.museos
+[0m12:45:38.968691 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_challenge_dbt.museos"
+[0m12:45:38.970310 [debug] [Thread-1 (]: Timing info for model.data_challenge_dbt.museos (compile): 12:45:38.964190 => 12:45:38.969592
+[0m12:45:38.971815 [debug] [Thread-1 (]: Began executing node model.data_challenge_dbt.museos
+[0m12:45:38.980907 [debug] [Thread-1 (]: Writing runtime sql for node "model.data_challenge_dbt.museos"
+[0m12:45:38.982321 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.museos"
+[0m12:45:38.983159 [debug] [Thread-1 (]: On model.data_challenge_dbt.museos: BEGIN
+[0m12:45:38.984018 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:45:38.992020 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m12:45:38.993001 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.museos"
+[0m12:45:38.993843 [debug] [Thread-1 (]: On model.data_challenge_dbt.museos: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "node_id": "model.data_challenge_dbt.museos"} */
+
+  
+    
+
+  create  table "data-challenge-dbt"."public"."museos__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+select
+    "Cod_Loc" as cod_localidad,
+    "IdProvincia" as id_provincia,
+    "IdDepartamento" as id_departamento,
+    "provincia" as provincia,
+    "categoria" as categoria,
+    "direccion" as domicilio,
+    "CP" as codigo_postal,
+    "localidad" as localidad,
+    "nombre" as nombre,
+    "telefono" as telefono,
+    "Mail" as mail,
+    "Web" as web
+FROM raw_museo
+  );
+  
+[0m12:45:39.060333 [debug] [Thread-1 (]: SQL status: SELECT 1182 in 0.0 seconds
+[0m12:45:39.073472 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.museos"
+[0m12:45:39.075347 [debug] [Thread-1 (]: On model.data_challenge_dbt.museos: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "node_id": "model.data_challenge_dbt.museos"} */
+alter table "data-challenge-dbt"."public"."museos__dbt_tmp" rename to "museos"
+[0m12:45:39.078702 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m12:45:39.086959 [debug] [Thread-1 (]: On model.data_challenge_dbt.museos: COMMIT
+[0m12:45:39.088336 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.museos"
+[0m12:45:39.089655 [debug] [Thread-1 (]: On model.data_challenge_dbt.museos: COMMIT
+[0m12:45:39.109836 [debug] [Thread-1 (]: SQL status: COMMIT in 0.0 seconds
+[0m12:45:39.118110 [debug] [Thread-1 (]: Applying DROP to: "data-challenge-dbt"."public"."museos__dbt_backup"
+[0m12:45:39.120682 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.museos"
+[0m12:45:39.122409 [debug] [Thread-1 (]: On model.data_challenge_dbt.museos: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "node_id": "model.data_challenge_dbt.museos"} */
+drop table if exists "data-challenge-dbt"."public"."museos__dbt_backup" cascade
+[0m12:45:39.124711 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.0 seconds
+[0m12:45:39.128746 [debug] [Thread-1 (]: Timing info for model.data_challenge_dbt.museos (execute): 12:45:38.972519 => 12:45:39.128306
+[0m12:45:39.129620 [debug] [Thread-1 (]: On model.data_challenge_dbt.museos: Close
+[0m12:45:39.131729 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '40602fcc-da69-4db1-82fd-c1e317be0cc6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e26729ba0>]}
+[0m12:45:39.134229 [info ] [Thread-1 (]: 4 of 6 OK created sql table model public.museos ................................ [[32mSELECT 1182[0m in 0.17s]
+[0m12:45:39.136037 [debug] [Thread-1 (]: Finished running node model.data_challenge_dbt.museos
+[0m12:45:39.136967 [debug] [Thread-1 (]: Began running node model.data_challenge_dbt.size_by_category
+[0m12:45:39.138056 [info ] [Thread-1 (]: 5 of 6 START sql table model public.size_by_category ........................... [RUN]
+[0m12:45:39.139845 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.data_challenge_dbt.museos, now model.data_challenge_dbt.size_by_category)
+[0m12:45:39.140847 [debug] [Thread-1 (]: Began compiling node model.data_challenge_dbt.size_by_category
+[0m12:45:39.146065 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_challenge_dbt.size_by_category"
+[0m12:45:39.147952 [debug] [Thread-1 (]: Timing info for model.data_challenge_dbt.size_by_category (compile): 12:45:39.141362 => 12:45:39.147103
+[0m12:45:39.148885 [debug] [Thread-1 (]: Began executing node model.data_challenge_dbt.size_by_category
+[0m12:45:39.157855 [debug] [Thread-1 (]: Writing runtime sql for node "model.data_challenge_dbt.size_by_category"
+[0m12:45:39.159103 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.size_by_category"
+[0m12:45:39.159958 [debug] [Thread-1 (]: On model.data_challenge_dbt.size_by_category: BEGIN
+[0m12:45:39.160741 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:45:39.168141 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m12:45:39.169102 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.size_by_category"
+[0m12:45:39.169961 [debug] [Thread-1 (]: On model.data_challenge_dbt.size_by_category: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "node_id": "model.data_challenge_dbt.size_by_category"} */
+
+  
+    
+
+  create  table "data-challenge-dbt"."public"."size_by_category__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+WITH categorias AS (
+    SELECT categoria FROM cines
+    UNION ALL
+    SELECT categoria FROM museos
+    UNION ALL
+    SELECT categoria FROM bibliotecas
+)
+
+SELECT
+    categoria,
+    COUNT(*) AS cantidad
+FROM categorias
+GROUP BY categoria
+  );
+  
+[0m12:45:39.224392 [debug] [Thread-1 (]: SQL status: SELECT 3 in 0.0 seconds
+[0m12:45:39.237940 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.size_by_category"
+[0m12:45:39.239972 [debug] [Thread-1 (]: On model.data_challenge_dbt.size_by_category: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "node_id": "model.data_challenge_dbt.size_by_category"} */
+alter table "data-challenge-dbt"."public"."size_by_category__dbt_tmp" rename to "size_by_category"
+[0m12:45:39.243389 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m12:45:39.250112 [debug] [Thread-1 (]: On model.data_challenge_dbt.size_by_category: COMMIT
+[0m12:45:39.251462 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.size_by_category"
+[0m12:45:39.252605 [debug] [Thread-1 (]: On model.data_challenge_dbt.size_by_category: COMMIT
+[0m12:45:39.276605 [debug] [Thread-1 (]: SQL status: COMMIT in 0.0 seconds
+[0m12:45:39.281740 [debug] [Thread-1 (]: Applying DROP to: "data-challenge-dbt"."public"."size_by_category__dbt_backup"
+[0m12:45:39.283595 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.size_by_category"
+[0m12:45:39.284491 [debug] [Thread-1 (]: On model.data_challenge_dbt.size_by_category: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "node_id": "model.data_challenge_dbt.size_by_category"} */
+drop table if exists "data-challenge-dbt"."public"."size_by_category__dbt_backup" cascade
+[0m12:45:39.285875 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.0 seconds
+[0m12:45:39.288744 [debug] [Thread-1 (]: Timing info for model.data_challenge_dbt.size_by_category (execute): 12:45:39.149389 => 12:45:39.288303
+[0m12:45:39.289616 [debug] [Thread-1 (]: On model.data_challenge_dbt.size_by_category: Close
+[0m12:45:39.291277 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '40602fcc-da69-4db1-82fd-c1e317be0cc6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e2673ec20>]}
+[0m12:45:39.292636 [info ] [Thread-1 (]: 5 of 6 OK created sql table model public.size_by_category ...................... [[32mSELECT 3[0m in 0.15s]
+[0m12:45:39.294190 [debug] [Thread-1 (]: Finished running node model.data_challenge_dbt.size_by_category
+[0m12:45:39.295166 [debug] [Thread-1 (]: Began running node model.data_challenge_dbt.size_by_category_province
+[0m12:45:39.296246 [info ] [Thread-1 (]: 6 of 6 START sql table model public.size_by_category_province .................. [RUN]
+[0m12:45:39.297981 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.data_challenge_dbt.size_by_category, now model.data_challenge_dbt.size_by_category_province)
+[0m12:45:39.299314 [debug] [Thread-1 (]: Began compiling node model.data_challenge_dbt.size_by_category_province
+[0m12:45:39.306538 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_challenge_dbt.size_by_category_province"
+[0m12:45:39.308263 [debug] [Thread-1 (]: Timing info for model.data_challenge_dbt.size_by_category_province (compile): 12:45:39.299915 => 12:45:39.307488
+[0m12:45:39.309154 [debug] [Thread-1 (]: Began executing node model.data_challenge_dbt.size_by_category_province
+[0m12:45:39.318027 [debug] [Thread-1 (]: Writing runtime sql for node "model.data_challenge_dbt.size_by_category_province"
+[0m12:45:39.319581 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.size_by_category_province"
+[0m12:45:39.320555 [debug] [Thread-1 (]: On model.data_challenge_dbt.size_by_category_province: BEGIN
+[0m12:45:39.321361 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:45:39.329829 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m12:45:39.331205 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.size_by_category_province"
+[0m12:45:39.333570 [debug] [Thread-1 (]: On model.data_challenge_dbt.size_by_category_province: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "node_id": "model.data_challenge_dbt.size_by_category_province"} */
+
+  
+    
+
+  create  table "data-challenge-dbt"."public"."size_by_category_province__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+WITH categorias AS (
+    SELECT categoria, provincia
+    FROM "data-challenge-dbt"."public"."cines"
+    UNION ALL
+    SELECT categoria, provincia
+    FROM "data-challenge-dbt"."public"."museos"
+    UNION ALL
+    SELECT categoria, provincia
+    FROM "data-challenge-dbt"."public"."bibliotecas"
+)
+
+SELECT
+    categoria,
+    provincia,
+    COUNT(*) AS cantidad
+FROM categorias
+GROUP BY categoria, provincia
+  );
+  
+[0m12:45:39.402728 [debug] [Thread-1 (]: SQL status: SELECT 72 in 0.0 seconds
+[0m12:45:39.422192 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.size_by_category_province"
+[0m12:45:39.424317 [debug] [Thread-1 (]: On model.data_challenge_dbt.size_by_category_province: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "node_id": "model.data_challenge_dbt.size_by_category_province"} */
+alter table "data-challenge-dbt"."public"."size_by_category_province__dbt_tmp" rename to "size_by_category_province"
+[0m12:45:39.427247 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m12:45:39.434367 [debug] [Thread-1 (]: On model.data_challenge_dbt.size_by_category_province: COMMIT
+[0m12:45:39.436226 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.size_by_category_province"
+[0m12:45:39.437305 [debug] [Thread-1 (]: On model.data_challenge_dbt.size_by_category_province: COMMIT
+[0m12:45:39.454943 [debug] [Thread-1 (]: SQL status: COMMIT in 0.0 seconds
+[0m12:45:39.460557 [debug] [Thread-1 (]: Applying DROP to: "data-challenge-dbt"."public"."size_by_category_province__dbt_backup"
+[0m12:45:39.463144 [debug] [Thread-1 (]: Using postgres connection "model.data_challenge_dbt.size_by_category_province"
+[0m12:45:39.464084 [debug] [Thread-1 (]: On model.data_challenge_dbt.size_by_category_province: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "data_challenge_dbt", "target_name": "dev", "node_id": "model.data_challenge_dbt.size_by_category_province"} */
+drop table if exists "data-challenge-dbt"."public"."size_by_category_province__dbt_backup" cascade
+[0m12:45:39.465372 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.0 seconds
+[0m12:45:39.468541 [debug] [Thread-1 (]: Timing info for model.data_challenge_dbt.size_by_category_province (execute): 12:45:39.309679 => 12:45:39.468035
+[0m12:45:39.469397 [debug] [Thread-1 (]: On model.data_challenge_dbt.size_by_category_province: Close
+[0m12:45:39.470951 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '40602fcc-da69-4db1-82fd-c1e317be0cc6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e26764640>]}
+[0m12:45:39.472372 [info ] [Thread-1 (]: 6 of 6 OK created sql table model public.size_by_category_province ............. [[32mSELECT 72[0m in 0.17s]
+[0m12:45:39.473904 [debug] [Thread-1 (]: Finished running node model.data_challenge_dbt.size_by_category_province
+[0m12:45:39.476398 [debug] [MainThread]: Using postgres connection "master"
+[0m12:45:39.477194 [debug] [MainThread]: On master: BEGIN
+[0m12:45:39.477869 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m12:45:39.484033 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m12:45:39.485180 [debug] [MainThread]: On master: COMMIT
+[0m12:45:39.486234 [debug] [MainThread]: Using postgres connection "master"
+[0m12:45:39.486955 [debug] [MainThread]: On master: COMMIT
+[0m12:45:39.487940 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m12:45:39.488715 [debug] [MainThread]: On master: Close
+[0m12:45:39.491136 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:45:39.492656 [debug] [MainThread]: Connection 'model.data_challenge_dbt.size_by_category_province' was properly closed.
+[0m12:45:39.494147 [info ] [MainThread]: 
+[0m12:45:39.495418 [info ] [MainThread]: Finished running 6 table models in 0 hours 0 minutes and 1.30 seconds (1.30s).
+[0m12:45:39.498107 [debug] [MainThread]: Command end result
+[0m12:45:39.514884 [info ] [MainThread]: 
+[0m12:45:39.515872 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:45:39.516711 [info ] [MainThread]: 
+[0m12:45:39.517503 [info ] [MainThread]: Done. PASS=6 WARN=0 ERROR=0 SKIP=0 TOTAL=6
+[0m12:45:39.519283 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.03692, "process_user_time": 4.994858, "process_kernel_time": 0.132181, "process_mem_max_rss": "106572", "process_out_blocks": "1976", "process_in_blocks": "0"}
+[0m12:45:39.520631 [debug] [MainThread]: Command `dbt run` succeeded at 12:45:39.520355 after 2.04 seconds
+[0m12:45:39.521388 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e29ba3fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e267ae200>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e26766260>]}
+[0m12:45:39.522164 [debug] [MainThread]: Flushing usage events

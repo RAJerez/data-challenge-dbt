@@ -71,19 +71,36 @@ The project was carried out with Python 3.10
 
 
 ## Creation of database, tables and pipeline execution
-I build a container with Postgres Database:
+I build a container with Postgres Database (set your Postgres environment variables in a .env file or docker-compose file):
 
     sudo docker compose up -d
-
-You can access the database from bash:
-
-    docker exec -it postgres psql -U postgres -d data-challenge-dbt
 
 Loading raw data into database
 The following script connects to the database and loads.
 
     python3 main.py
 
+![Load Data](./images/load-data-db.png)
+
+You can access the database from bash:
+
+    docker exec -it postgres psql -U postgres -d data-challenge-dbt
+
+![Successful upload](./images/successful-upload.png)
+
 Run dbt models:
 
     dbt run
+
+![DBT run](./images/dbt-run.png)
+
+> [!TIP]
+> Check that the tables were created correctly in the database.
+
+![DBT run success](./images/dbt-run-success.png)
+
+
+Make queries to the database to check
+
+![Query](./images/query.png)
+

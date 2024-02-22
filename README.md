@@ -1,82 +1,73 @@
 # Data Challenge - DBT
 
-This project focuses on data processing for the data-challenge, this time applying DBT models.
-
-Data will be consumed from 3 tables with raw information about Argentine libraries, museums and cinemas in a Postgres database.
+This project aims to process data for a data challenge, utilizing DBT models. The data will be sourced from three tables containing raw information about libraries, museums, and cinemas in Argentina, stored in a PostgreSQL database.
 
 ## Data processing
-Data processing will allow our project to transform the data of the
-source files in the information that will feed the database. For this, the
-project must:
+Data processing involves transforming the raw data into structured information that will populate the database. This includes:
 
-- Normalize all the information from museums, cinemas and libraries and generate tables that have the following columns.
-    - cod_localidad
-    - id_provincia
-    - id_departamento
-    - categoría
-    - provincia
-    - localidad
-    - nombre
-    - domicilio
-    - código postal
-    - número de teléfono
-    - mail
-    - web
+1. Normalizing information from museums, cinemas, and libraries to generate tables with the following columns:
+    - 'cod_localidad'
+    - 'id_provincia'
+    - 'id_departamento'
+    - 'categoría'
+    - 'provincia'
+    - 'localidad'
+    - 'nombre'
+    - 'domicilio'
+    - 'código postal'
+    - 'número de teléfono'
+    - 'mail'
+    - 'web'
 
-- Process the joint data to generate a table with the following information:
-    - Cantidad de registros totales por categoría
-    - Cantidad de registros totales por fuente
-    - Cantidad de registros por provincia y categoría
+2. Processing joint data to generate a table with the following information:
+    - Total number of records per category
+    - Total number of records per source
+    - Number of records per province and category
 
 
-- Process the cinema information to create a table that contains:
-    - Provincia
-    - Cantidad de pantallas
-    - Cantidad de butacas
-    - Cantidad de espacios INCAA
+3. Processing cinema information to create a table containing:
+    - 'Provincia'
+    - 'Cantidad de pantallas' (Number of screens)
+    - 'Cantidad de butacas' (Number of seats)
+    - 'Cantidad de espacios' INCAA (Number of INCAA spaces)
 
 
-## Pre requirements
+## Prerequisites
+
+Ensure the following dependencies are installed:
 
 - python==3.10
 - docker==25.0.12
 - dbt-postgres==1.7.4
 - poetry==1.7.1
 
-#### Poetry
-I used Poetry 1.7.1 for better dependency management and also to create my virtual environment.
+#### Using Poetry
+If you prefer using Poetry for dependency management:
 
 Install poetry from pipx and the installation will be carried out isolated from the global environment
     
     pipx install poetry==1.7.1
-
-To install the necessary dependencies described in pyproyect.toml
-
     poetry install
-
-A virtual environment will automatically be created that you can access
-
     poetry shell
 
 
-#### Option without Poetry
-If you do not use poetry you can install the dependencies through requirements.txt
-The project was carried out with Python 3.10
+#### Without Poetry
+If you do not use Poetry, install dependencies via requirements.txt:
 
     python3 -m virtualenv venv
-
     source venv/bin/activate
-
     pip install -r 'requirements.txt'
 
 
-## Creation of database, tables and pipeline execution
-I build a container with Postgres Database (set your Postgres environment variables in a .env file or docker-compose file):
+## Database configuration and data ingestion
+> [!TIP]
+> set your PostgreSQL environment variables in a `.env`
+
+1. Build a container with PostgreSQL :
 
     sudo docker compose up -d
 
-Loading raw data into database
-The following script connects to the database and loads.
+2. Load raw data into the database using the following script:
 
     python3 main.py
 
@@ -88,7 +79,7 @@ You can access the database from bash:
 
 ![Successful upload](./images/successful-upload.png)
 
-Run dbt models:
+## Running DBT models:
 
     dbt run
 
@@ -99,6 +90,8 @@ Run dbt models:
 
 ![DBT run success](./images/dbt-run-success.png)
 
+
+## Database Queries
 
 Make queries to the database to check
 
